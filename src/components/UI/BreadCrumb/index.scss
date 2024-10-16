@@ -1,0 +1,20 @@
+.bread-crumb {
+    height: 23px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    a {
+        color: $coolDark4;
+        font-size: 12px;
+        &:last-child {
+            color: $coolDark1;
+        }
+        &:not(:last-child) {
+            &:after {
+                content: '/';
+                margin: 0 2.5px;
+                display: inline-block;
+            }
+        }
+    }
+}

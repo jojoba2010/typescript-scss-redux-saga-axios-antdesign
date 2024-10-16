@@ -1,0 +1,199 @@
+.container {
+    display: flex;
+    padding: 0;
+    .content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        position: relative;
+        div[class^='form-buttons-'], div[class^=' form-buttons-'] {
+            height: 40px;
+            button {
+                margin: 0;
+                max-width: 90px;
+                min-width: 90px;
+            }
+        }
+        
+        button {
+            /*padding: 8px;
+            min-width: 105px;*/
+            & > span {
+                line-height: 15px;
+                vertical-align: baseline;
+            }
+            &.advancedLink {
+                color: $statusColorLink !important;
+                font-size: 12px;
+                &:hover {
+                    border: none !important;
+                }
+            }
+        }
+    }
+    .saveIcon {
+        margin-inline-start: auto;
+        cursor: pointer;
+        &.absolute {
+            position: absolute;
+            inset-inline-end: 0;
+        }
+    }
+    :global {
+        .ant-popover-inner {
+            padding: 0;
+            & > div > div {
+                padding: 12px;
+            }
+        }
+        .ant-popover-inner-content {
+            max-height: 90vh;
+            overflow-y: auto;
+            @include scrollbar;
+        }
+        .ant-form-item {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.contentInLine {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+    flex-grow: 1;
+    @media (max-width: 768px) {
+        justify-content: flex-start;
+    }
+}
+.selectInLine {
+    width: 130px;
+    flex-grow: 1;
+    @media (max-width: 576px) {
+        width: 100%;
+    }
+}
+.switchInLine{
+    width: max-content;
+}
+.overlay {
+    width: 270px;
+    :global {
+        .ant-popover-inner-content {
+            overflow: unset;
+        }
+    }
+}
+.theme-2, .theme-3 {
+    width: 540px;
+    max-width: 94%;
+    form {
+        flex-flow: wrap;
+        gap: 12px;
+        & > div:last-child {
+            width: 100%;
+        }
+        /*:global {
+            .ant-form-item-control-input-content > div {
+                display: flex;
+                flex-direction: column-reverse;
+                border: none;
+                height: auto;
+                &.ant-picker {
+                    display: inline-flex;
+                    flex-direction: row;
+                    height: 40px;
+                }
+                &:hover {
+                    box-shadow: none;
+                }
+                & > input, & > .ant-select {
+                    border: 1px solid $stroke1;
+                    border-radius: 3px;
+                    min-height: 40px;
+                    width: 100%;
+                    .ant-select-selector {
+                        height: auto;
+                        min-height: 40px;
+                    }
+                    .ant-select-selection-overflow {
+                        min-height: 38px;
+                    }
+                }
+                & > label {
+                    position: initial;
+                    height: 22px;
+                    min-height: 22px;
+                    line-height: 22px;
+                    color: rgba(0, 0, 0, 0.88);
+                    font-size: 14px !important;
+                }
+            }
+        }
+        & > div:last-child {
+            width: 100%;
+            :global {
+                .ant-form-item-control-input-content > div {
+                    flex-direction: row;
+                }
+            }
+        }*/
+    }
+}
+
+.theme-2 {
+    form > div > div > div {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0px;
+    }
+    :global {
+        .ant-radio-group > div {
+            gap: 4px !important;
+        }
+        .ant-radio-wrapper {
+            margin-inline-end: 0 !important;
+            & > span:last-child {
+                padding: 0 6px;
+            }
+        }
+    }
+    form > div:last-child {
+        :global {
+            .ant-form-item-control-input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.theme-3 {
+    width: 810px;
+}
+
+.check-box-filter {
+    :global {
+        .ant-form-item {
+            margin: 0;
+        }
+        .ant-form-item-control-input {
+            min-height: 1px;
+        }
+    }
+}
+
+.price-filter {
+    display: flex;
+    column-gap: 8px;
+}
+
+.group-filter{
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}

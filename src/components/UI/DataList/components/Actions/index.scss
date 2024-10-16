@@ -1,0 +1,59 @@
+
+.actions-container {
+    cursor: pointer;
+    text-align: center;
+}
+.theme-1 {
+    cursor: pointer;
+    .disabled {
+        color: $iconColor3;
+    }
+    & > div {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        min-width: 175px;
+        &:hover {
+            background-color: $grayColor3;
+        }
+        svg {
+            line-height: 40px;
+            height: 40px;
+            margin: 0 12px 0 10px;
+            color: $iconColor3;
+        }
+        img {
+            margin: 0 12px 0 10px;
+            height: 17px;
+        }
+        span {
+            line-height: 40px;
+            height: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .menu {
+        color: $coolDark3;
+        cursor: pointer;
+        position: relative;
+        top: 3px;
+    }
+    .menu-overlay {
+        :global {
+            .ant-popover-inner-content {
+                padding: 0;
+            }
+        }
+    }
+}
+.theme-2 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 316px;
+    min-height: 103px;
+    @media (max-width: 576px) {
+        width:100%;
+    }
+}

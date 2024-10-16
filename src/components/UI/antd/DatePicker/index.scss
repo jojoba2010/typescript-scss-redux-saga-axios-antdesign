@@ -1,0 +1,137 @@
+.input {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  border-radius: 5px;
+  color: $coolDark1;
+  background-color: $white;
+  position: relative;
+  font-size: 14px;
+  border: 1px solid $stroke1;
+  transition: all .3s;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    border: 1px solid $mainColorS4;
+    box-shadow: 0 0 0 3px $mainColorS1;
+  }
+  &:focus, .input-focused {
+    border: 1px solid $primary-color;
+    box-shadow: 0 0 0 3px $mainColorS6;
+    outline: none;
+    &:hover {
+      border: 1px solid $primary-color;
+      box-shadow: 0 0 0 3px $mainColorS6;
+      outline: none;
+    }
+  }
+  input:-internal-autofill-selected {
+    color: $coolDark1 !important;
+    background-color: $white !important;
+  }
+  & input {
+    padding-inline-start: 10px;
+    margin-inline-start: 2px;
+    width: 100%;
+    line-height: 32px;
+    height: 32px;
+    color: $coolDark1;
+    background-color: $white;
+    border: none;
+    border-color: transparent;
+    outline: none;
+    border-radius: 5px;
+    &:disabled,
+    &:hover:disabled {
+      border: 1px solid $mainColorS1;
+      background: $bgDarker;
+      box-shadow: none;
+      color: $coolDark6;
+    }
+  }
+
+  .label {
+    background: $white;
+    z-index: 1;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    inset-inline-start: 13px;
+    top: 0;
+    height: 38px;
+    transition: 0.2s ease all;
+    color: $coolDark4;
+    @extend .btr14;
+  }
+
+  .as-placeholder {
+    z-index: 2;
+    color: $coolDark4;
+    @extend .btr14;
+  }
+
+  .as-label {
+    background: $white;
+    width: auto;
+    inset-inline-start: 12px;
+    top: -9px;
+    font-size: 12px !important;
+    padding: 0 4px;
+    margin-inline-start: -4px;
+    color: $coolDark3;
+    height: 13px;
+    line-height: 13px;
+    background: $white;
+  }
+
+}
+:global(.ant-form-item-has-error) .input {
+  border: 1px solid $statusColorError;
+}
+
+:global {
+  .ant-input-suffix {
+    margin-inline-start: 4px;
+  }
+  .ant-input-prefix, .ant-input-suffix {
+    height: 40px;
+    padding: 0 14px;
+    color: $iconColor4;
+    .anticon {
+      top: -2px;
+    }
+    svg, svg path {
+      color: $iconColor4;
+    }
+  }
+
+  .ant-form-item-has-error :not(.ant-input-disabled).ant-input:focus,
+  .ant-form-item-has-error :not(.ant-input-affix-wrapper-disabled).ant-input-affix-wrapper{
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .ant-form-item-has-error :not(.ant-input-disabled) {
+    label {
+      color: $statusColorError;
+    }
+    .input {
+      background-color: yellow
+    }
+    svg, svg path {
+      color: $statusColorError;
+    }
+  }
+  .ant-form-item {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+  .ant-input-affix-wrapper {
+    display: inline-flex;
+    width: 100%;
+  }
+}
+

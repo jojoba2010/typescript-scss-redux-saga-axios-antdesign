@@ -1,0 +1,286 @@
+.input {
+    height: 4rem;
+    width: 100%;
+    line-height: 3.84rem;
+    border-radius: .5rem;
+    color: $coolDark1;
+    background-color: $white;
+    position: relative;
+    font-size: 1.4rem !important;
+    border: 1px solid $stroke1;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    :global {
+        .ant-input-affix-wrapper {
+            border-radius: .5rem;
+        }
+        * {
+            font-family: 'Barlow', sans-serif;
+        }
+    }
+    &.textarea {
+        height: auto;
+        line-height: 1.8rem;
+        position: relative;
+        .label {
+            top: 2rem;
+            &.as-label {
+                top: -.4rem;
+            }
+        }
+        :global {
+            .ant-input-textarea-show-count:after {
+                position: absolute;
+                right: unset;
+                inset-inline-end: 1.3rem;
+                bottom: 1.3rem;
+                color: $iconColor2;
+                white-space: nowrap;
+                content: attr(data-count);
+                pointer-events: none;
+                margin-bottom: 0;
+            }
+        }
+        textarea,
+        textarea:focus,
+        textarea:focus-visible {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding-inline-start: 1.3rem;
+            border-radius: .5rem;
+            padding-top: 1rem;
+            height: auto;
+        }
+    }
+
+    &:hover {
+        border: 1px solid $mainColorS4;
+        box-shadow: 0 0 0 3px $mainColorS1;
+    }
+    &:focus,
+    .input-focused {
+        border: 1px solid $primary-color;
+        box-shadow: 0 0 0 3px $mainColorS6;
+        outline: none;
+        &:hover {
+            border: 1px solid $primary-color;
+            box-shadow: 0 0 0 3px $mainColorS6;
+            outline: none;
+        }
+    }
+    input:-internal-autofill-selected {
+        color: $coolDark1 !important;
+        background-color: $white !important;
+    }
+    & input {
+        padding-inline-start: 1rem;
+        margin-inline-start: 2px;
+        width: calc(100% - 2.4rem);
+        height: calc(100% - 2px);
+        color: $coolDark1;
+        background-color: transparent;
+        border: none;
+        border-color: transparent;
+        outline: none;
+        border-radius: 5px;
+        /* &:disabled,
+        // &:hover:disabled {
+        //   border: 1px solid $mainColorS1;
+        //   background: $bgDarker;
+        //   box-shadow: none;
+        //   color: $coolDark6;
+        // }*/
+        &[disabled] {
+            background-color: transparent;
+        }
+        &[type="number"] {
+            width: calc(100% - 2px);
+        }
+        &:focus {
+            border: none;
+            box-shadow: none;
+        }
+    }
+    :global {
+        .ant-input-disabled {
+            background-color: transparent;
+        }
+    }
+    & input:-webkit-autofill,
+    & input:-webkit-autofill:hover, 
+    & input:-webkit-autofill:focus, 
+    & input:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 3rem white inset !important;
+    }
+
+    .label {
+        background: $white;
+        z-index: 1;
+        font-weight: 400;
+        position: absolute;
+        pointer-events: none;
+        inset-inline-start: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.2s ease all;
+        color: $coolDark3;
+        white-space: nowrap;
+        overflow: hidden;
+        @extend .btr14;
+    }
+
+    .as-placeholder {
+        z-index: 2;
+        color: $coolDark4;
+        @extend .btr14;
+        width: calc(100% - 6.5rem);
+        @media (max-width: 576px) {
+            width: calc(100% - 2.2rem) !important;
+        }
+    }
+    &:not(.textarea) {
+        .as-placeholder {
+            display: flex !important;
+            height: calc(100% - 2px);
+            align-items: center;
+        }
+    }
+    &.as-disabled {
+        background-color: rgba($black, .04);
+        &:hover {
+            border-color: $stroke1;
+            box-shadow: none;
+        }
+        label {
+            background-color: rgb(244 244 244);
+            &.as-label {
+                border-radius: 3px;
+                padding-top: 2px;
+                top: -3px;
+                line-height: 1.4rem;
+                height: 1.6rem;
+            }
+            &.as-placeholder {
+                background-color: transparent;
+            }
+        }
+        :global {
+            .ant-select-selector {
+                background-color: transparent !important;
+            }
+        }
+    }
+
+    .as-label {
+        background: $white;
+        width: auto;
+        inset-inline-start: 1.2rem;
+        top: 0;
+        font-size: 1.2rem !important;
+        padding: 0 .4rem;
+        margin-inline-start: -.4rem;
+        color: $coolDark3;
+        height: 1.3rem;
+        line-height: 1.3rem;
+        background: $white;
+    }
+}
+:global(.ant-form-item-has-error) .input {
+    border: 1px solid $statusColorError;
+}
+:global {
+    .ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+        box-shadow: 0 0 0 2px $mainColorS2 !important;
+    }
+    .ant-input-suffix {
+        margin-inline-start: .4rem;
+    }
+    .ant-input-prefix,
+    .ant-input-suffix {
+        height: 3.2rem;
+        padding: 0 1.4rem;
+        color: #b7c4d7;
+        .anticon {
+            top: -2px;
+        }
+        svg,
+        svg path {
+            color: #b7c4d7;
+        }
+    }
+
+    .ant-form-item-has-error :not(.ant-input-disabled).ant-input:focus,
+    .ant-form-item-has-error :not(.ant-input-affix-wrapper-disabled).ant-input-affix-wrapper {
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
+    .ant-form-item-has-error :not(.ant-input-disabled) {
+        label {
+            color: $statusColorError;
+        }
+        .input {
+            background-color: yellow;
+        }
+        svg,
+        svg path {
+            color: $statusColorError;
+        }
+    }
+    .ant-form-item {
+        margin-bottom: 2rem;
+        @media (max-width: 576px) {
+            margin-bottom: 1rem;
+        }
+        &:last-child {
+            margin-bottom: 1rem;
+        }
+    }
+    .ant-input-affix-wrapper {
+        display: inline-flex;
+        width: 100%;
+        border: none !important;
+        display: flex !important;
+        height: calc(100% - 2px);
+        align-items: center;
+        &:hover {
+            border: none;
+            box-shadow: none;
+        }
+    }
+    .ant-select-selector,
+    .ant-picker {
+        border: none !important;
+        box-shadow: none !important;
+        font-size: 1.4rem;
+    }
+    // Date picker
+    .ant-picker {
+        width: 100%;
+        height: 4rem;
+        border: 1px solid $stroke1 !important;
+        border-radius: 5px !important;
+        .ant-picker-suffix {
+            position: relative;
+        }
+        .ant-picker-cell-inner {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: $coolDark2;
+        }
+    }
+    .ant-select-arrow {
+        user-select: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .ant-picker-date-panel .ant-picker-content th,
+    .ant-picker-date-panel .ant-picker-content td {
+        font-size: 1.4rem;
+    }
+    .ant-picker-cell {
+        padding: 1.4rem !important;
+    }
+}

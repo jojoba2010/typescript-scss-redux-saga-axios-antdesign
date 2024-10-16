@@ -1,0 +1,16 @@
+:global {
+  .ant-table-thead > tr > th, .ant-table-tbody > tr > td, .ant-table tfoot > tr > th, .ant-table tfoot > tr > td {
+    padding: 1.6rem 1.2rem !important;
+  }
+  .ant-table-thead > tr > th {
+    padding: 1.6rem 1.2rem !important;
+    text-align: start;
+    &::before {
+      display: none;
+    }
+  }
+  .ant-table-tbody > tr > td {
+    border-bottom: none;
+    text-align: start;
+  }
+}

@@ -1,0 +1,128 @@
+.theme1, .theme2, .theme3 {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    min-width: 41px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 0 10px 0 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    overflow: hidden;
+    width: fit-content; 
+    line-height: 17px;
+    .name-container {
+        input {
+            width: -webkit-fill-available
+        }
+    }
+}
+
+.theme1, .theme3 {
+    .name-container {
+        flex-grow: 1;
+        max-width: 180px;
+        min-width: 0;
+        position: relative;
+        display: flex;
+        span {
+            max-width: 100%;
+            min-width: 0;
+            position: relative;
+            color: $white;
+        }
+        input {
+            border-radius: 5px;
+            border: 1px solid $stroke1;
+        }
+    }
+}
+.theme1 {
+    .remove, .actions {
+        display: none;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+        top: 2px;
+    }
+    .remove {
+        inset-inline-end: 2px;
+        svg {
+            color: $iconColor3;
+        }
+    }    
+    .actions {
+        inset-inline-end: 20px;
+    }
+    &:hover {
+        .name-container {
+            max-width: calc(100% - 34px);
+            overflow: hidden;
+        }
+        .remove, .actions {
+            display: flex;
+        }
+    }
+}
+
+.theme2 {
+    border-radius: 0;
+    padding: 0;
+    width: inherit; 
+    line-height: inherit;
+    .name-container {
+        padding: 5px 10px;
+        border-radius: 12px;
+        span {
+            color:$white;
+        }
+        input {
+            width: -webkit-fill-available
+        }
+    }
+    .actions {
+        display: none;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        padding: 1px;
+        top: 2px;
+        inset-inline-end: 20px;
+    }
+    &:hover .actions {
+        display: flex;
+    }
+}
+
+.menu {
+    color: $coolDark3;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+.menu-overlay {
+    :global {
+        .ant-popover-inner-content {
+            padding: 0;
+        }
+    }
+}
+.color-picker {
+    width: 120px;
+    button {
+        svg {
+            display: none;
+        }
+    }
+}
+:global {
+    .ant-modal-root .ant-modal-wrap {
+        z-index: 1031;
+    }
+}
+.theme3 {
+    cursor: default;
+}

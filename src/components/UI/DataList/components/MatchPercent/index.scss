@@ -1,0 +1,37 @@
+.tag {
+    border-radius: 5px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 73px;
+    display: inline-block;
+    svg {
+        vertical-align: top;
+        margin-top: 7.5px;
+    }
+    span {
+        padding-inline-start: 6.5px;
+    }
+}
+
+.orange_tag {
+    background-color: $mainColorS6;
+    svg {
+        color: $primaryColor;
+    }
+}
+
+.green_tag {
+    background-color: rgba($matchTagGreen, .2);
+    svg {
+        color: $matchTagGreen;
+    }
+}
+
+.grey_tag {
+    background-color: rgba($iconColor2, .05);
+    svg {
+        color: $iconColor2;
+    }
+}

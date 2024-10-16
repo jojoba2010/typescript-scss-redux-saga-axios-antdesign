@@ -1,0 +1,63 @@
+.upload-box {
+  display: inline-block;
+  width: 100%;
+  .upload-button {
+    height: 40px;
+    line-height: 40px;
+    border: 1px dashed $stroke1;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    > span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 90%;
+      display: inline-block;
+    }
+    svg {
+      color: $primary-color;
+      font-size: 12px;
+      position: relative;
+      margin-inline-start: 0;
+      top: -50%;
+      margin-bottom: -6px;
+    }
+  }
+  .upload-file-content {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid $stroke1;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    > * {
+      flex: 1;
+    }
+    span {
+      min-width: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    svg {
+      color: $stroke1;
+      font-size: 12px;
+      position: relative;
+      top: 12px;
+    }
+  }
+  :global {
+    .ant-upload.ant-upload-select {
+      display: block;
+    }
+    .ant-upload-select-text {
+      width: 100%;
+    }
+  }
+}

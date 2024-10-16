@@ -1,0 +1,15 @@
+.input {
+    :global {
+        .ant-input-number {
+            width: 100%;
+            border: none;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        .ant-input-number-handler-wrap {
+            display: none;
+            
+        }
+    }
+}

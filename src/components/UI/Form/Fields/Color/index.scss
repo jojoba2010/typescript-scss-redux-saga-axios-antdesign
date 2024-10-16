@@ -1,0 +1,59 @@
+.suffix-container {
+    position: relative;
+    .suffix-wrapper {
+        position: absolute;
+        top: 1rem;
+        inset-inline-end: .6rem;
+        color: $coolDark4;
+        @media (max-width: 768px) {
+            inset-inline-end: 3px;
+        }
+    }
+}
+.color-field {
+    height: 4rem;
+    border-radius: .5rem;
+    background: $white;
+    width: 100%;
+    position: relative;
+    display: flex;
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    & > div {
+        display: inline-block;
+        border-radius: 50%;
+        box-shadow: 0 0 .6rem 0 $shadowLight2;
+    }
+    &__selected {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+    h6 {
+        display: inline-block;
+        position: absolute;
+        inset-inline-end: .6rem;
+        top: .4rem;
+        margin-top: .6rem;
+        color: $iconColor3;
+    }
+    @media (max-width: 768px) {
+        padding: .4rem .8rem;
+        & > span {
+            font-size: 1.3rem;
+        }
+        & > div {
+            margin-inline-end: .6rem;
+        }
+    }
+    .close{
+        display: none;
+    }
+    &:hover  {
+        .close {
+            display: inline-block;
+        }
+        .arrow {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,4 @@
+/node_modules
+/dist
+/src/**/*.scss.d.ts
+/src/stories

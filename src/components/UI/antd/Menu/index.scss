@@ -1,0 +1,130 @@
+:local {
+    .ant-menu {
+        list-style: none;
+        margin: 0;
+        &.ant-menu-horizontal {
+            background-color: transparent;
+            .ant-menu-item {
+                font-size: 16px;
+                line-height: 18px;
+                padding: 0 0 16px 0;
+                margin-inline-start: 13px;
+                margin-inline-end: 13px;
+                height: auto;
+                a {
+                    text-decoration: none;
+                    color: $coolDark2;
+                }
+                &:first-child {
+                    margin-inline-start: 0;
+                }
+                &:first-last {
+                    margin-inline-end: 0;
+                }
+            }
+            .ant-menu-item-selected,
+            .ant-menu-item:hover {
+                color: $coolDark1;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                height: 34px;
+                a {
+                    text-decoration: none;
+                    color: $coolDark1;
+                }
+                svg {
+                    color: $primary-color;
+                }
+                &:after {
+                    display: none;
+                }
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    border-bottom: 2px solid transparent;
+                    transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+                    content: '';
+                    border-bottom: 2px solid $primaryColor;
+                    width: 100%;
+                    bottom: 0;
+                }
+            }
+            .ant-menu-item:hover {
+                font-weight: normal;
+            }
+        }
+    }
+    .ant-menu-item {
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        svg {
+            color: $iconColor4;
+            margin-inline-end: 15px;
+            position: relative;
+            top: 7px;
+        }
+        color: $coolDark3;
+        &.ant-menu-item-selected {
+            color: $coolDark1;
+            svg {
+                color: $primary-color;
+            }
+            &:after {
+                content: '';
+                background-color: $primaryColor;
+                width: 3px;
+                height: 24px;
+                border-radius: 0px 15px 15px 0px;
+                display: block;
+                top: 10px;
+                inset-inline-start: 0;
+                position: absolute;
+                right: auto;
+                bottom: auto;
+                opacity: 1;
+                transform: nonebn;
+            }
+        }
+        &.ant-menu-item-selected {
+            color: $coolDark1;
+            svg {
+                color: $primary-color;
+            }
+            &:after {
+                content: '';
+                background-color: $primaryColor;
+                width: 3px;
+                height: 24px;
+                border-radius: 0px 15px 15px 0px;
+                display: block;
+                top: 10px;
+                inset-inline-start: 0;
+                position: absolute;
+                right: auto;
+                bottom: auto;
+                opacity: 1;
+                transform: none;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: transparent;
+    }
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected,
+    .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+        color: $coolDark1;
+    }
+}

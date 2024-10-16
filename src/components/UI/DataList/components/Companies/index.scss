@@ -1,0 +1,49 @@
+.user-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.user-figure {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    border: 1px solid $stroke1;
+    max-width: max-content;
+    flex-wrap: nowrap;
+    img {
+        border-radius: 34px !important;
+        width: 34px !important;
+        height: 34px !important;
+    }
+    span {
+        font-size: 14px;
+        color: $coolDark1;
+        font-weight: 400;
+        padding:0 10px;
+        display: flex;
+        align-items: center;
+    }
+    small {
+        color: $statusColorLink;
+        padding-inline-start: 8px;
+    }
+}
+
+.col-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: space-between;
+}
+
+.normal-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: $coolDark1;
+    display: block;
+    margin: 5px 0;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+}

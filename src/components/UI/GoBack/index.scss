@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    column-gap: 10px;
+}
+.header {
+    line-height: 40px;
+    width: 100%;
+    margin-inline-start: 16px;
+    margin: 0;
+    line-height: 40px;
+}
+
+.button {
+    margin-inline-start: 12px;
+    svg {
+        vertical-align: text-top;
+    }
+}

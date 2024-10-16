@@ -1,0 +1,118 @@
+:global {
+  .ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+    background-color: $primary-color;
+    border-color: transparent;
+  }
+  .ant-tree-checkbox-checked .ant-tree-checkbox-inner::after {
+    content: '';
+    background-image: url("@assets/svg/checkmark.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 11px !important;
+    height: 8px;
+    border: 0 !important;
+    position: absolute;
+    left: unset;
+    inset-inline-start: 2px;
+    top: 3px !important;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    animation-fill-mode: backwards;
+    transform: none !important;
+    margin-inline-start: -1px;
+  }
+  .ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner::after {
+    content: '';
+    background-image: url("@assets/svg/minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 10px;
+    position: absolute;
+    left: unset;
+    inset-inline-start: 9px;
+    top: 9px;
+    transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+    animation-fill-mode: backwards;
+    border: none;
+    background-color: $primary-color;
+  }
+  .ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner {
+    background-color: $primary-color;
+    border-color: transparent;
+  }
+  .ant-tree-checkbox-input {
+    position: absolute;
+    top: 0;
+    right: unset;
+    inset-inline-end: 0;
+    bottom: 0;
+    left: unset;
+    inset-inline-start: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .ant-tree-checkbox-inner {
+    position: relative;
+    left: unset;
+    inset-inline-start: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    direction: ltr;
+    background-color: $white;
+    border: 1px solid $grayColor3;
+    border-radius: 5px;
+    border-collapse: separate;
+    transition: all 0.3s;
+  }
+
+  .ant-tree-checkbox-wrapper {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba($black, 0.85);
+    font-size: 15px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum';
+    display: inline-flex;
+    align-items: baseline;
+    line-height: unset;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ant-tree-checkbox {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba($black, 0.85);
+    font-size: 15px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum';
+    position: relative;
+    top: 0.2em;
+    line-height: 1;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      .ant-tree-checkbox-inner {
+        border-color: $primary-color;
+      }
+    }
+  }
+  .ant-tree-checkbox + span {
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
+  }
+  .ant-tree-checkbox-checked::after {
+    border: none !important;
+  }
+}

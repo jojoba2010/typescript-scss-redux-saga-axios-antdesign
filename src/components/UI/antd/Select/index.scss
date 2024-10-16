@@ -1,0 +1,31 @@
+.ala-select-dropdown {
+  border-radius: 5px !important;
+  border: 1px solid $primaryColor;
+  padding:0 10px !important;
+  :global {
+    .ant-select-item {
+      height: 40px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 400;
+      font-size: 14px;
+      border-radius: 5px;
+      &.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+        background-color: transparent !important;
+        font-weight: 400;
+        font-size: 14px;
+        .ant-select-item-option-state {
+          display: flex;
+          svg {
+            width: 20px;
+            color: $iconColor2;
+          }
+        }
+      }
+      &.ant-select-item-option-disabled {
+        opacity: .5;
+      }
+    }
+  }
+}

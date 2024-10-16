@@ -1,0 +1,21 @@
+.container {
+    padding: 6px 8px;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    line-height: 24px;
+    cursor: pointer;
+    svg {
+        color: $statusColorSuccess;
+        transition: visibility 0.2s;
+        transition: all .2s;
+        &.hide {
+            visibility: hidden;
+        }
+    }
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}

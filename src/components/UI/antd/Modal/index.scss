@@ -1,0 +1,38 @@
+@import "src/styles/_base.scss";
+
+:global {
+  .ant-modal-root {
+    .ant-modal-mask {
+      background: rgba($coolDark7, 0.4);
+      backdrop-filter: blur(6px);
+    }
+  }
+  .ant-modal-header {
+    border-bottom: none;
+    padding: 20px 26px;
+    .ant-modal-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: $coolDark1;
+    }
+  }
+  .ant-modal-content {
+    overflow: hidden;
+    box-shadow: none;
+    border-radius: 5px;
+    .modal-body {
+      padding: 0 26px 10px;
+    }
+    .ant-modal-close-x {
+      height: 62px;
+      line-height: 62px;
+      svg {
+        color: $iconColor4;
+      }
+    }
+    .ant-modal-footer {
+      border: none;
+      padding: 20px 26px;
+    }
+  }
+}

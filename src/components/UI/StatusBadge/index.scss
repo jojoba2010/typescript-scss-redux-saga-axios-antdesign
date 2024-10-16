@@ -1,0 +1,15 @@
+.badge {
+    z-index: 10;
+    position: absolute;
+    inset-inline-end: -1px;
+    top: -1px;
+    height: 21px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 0 7.5px;
+    margin-inline-start: 10px;
+    line-height: 21px;
+    color: $white;
+    border-start-end-radius: 5px;
+    border-end-start-radius: 5px;
+}

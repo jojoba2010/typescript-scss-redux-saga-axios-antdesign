@@ -1,0 +1,30 @@
+declare const styles: {
+  readonly "ant-form-item": string;
+  readonly "ant-form-item-has-error": string;
+  readonly "ant-input": string;
+  readonly "ant-input-affix-wrapper": string;
+  readonly "ant-input-affix-wrapper-disabled": string;
+  readonly "ant-input-affix-wrapper-focused": string;
+  readonly "ant-input-disabled": string;
+  readonly "ant-input-prefix": string;
+  readonly "ant-input-suffix": string;
+  readonly "ant-input-textarea-show-count": string;
+  readonly "ant-picker": string;
+  readonly "ant-picker-cell": string;
+  readonly "ant-picker-cell-inner": string;
+  readonly "ant-picker-content": string;
+  readonly "ant-picker-date-panel": string;
+  readonly "ant-picker-suffix": string;
+  readonly "ant-select-arrow": string;
+  readonly "ant-select-selector": string;
+  readonly "anticon": string;
+  readonly "as-disabled": string;
+  readonly "as-label": string;
+  readonly "as-placeholder": string;
+  readonly "input": string;
+  readonly "input-focused": string;
+  readonly "label": string;
+  readonly "textarea": string;
+};
+export = styles;
+

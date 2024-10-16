@@ -1,0 +1,52 @@
+.color-container {
+    .color-item {
+        height: 40px;
+        width: 40px;
+        border: 1px solid $stroke1;
+        border-radius: 50%;
+        :global {
+            .ant-radio {
+                display: none;
+            }
+        }
+    }
+    :global {
+        .ant-radio-group {
+            vertical-align: top;
+        }
+        .ant-radio-wrapper {
+            vertical-align: top;
+            &:after {
+                content: unset;
+            }
+            & > span:last-child {
+                padding: 0;
+                display: inline-block;
+                max-width: 40px;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+            }
+            .remixicon-icon {
+                top: 9.5px;
+                left: unset;
+                inset-inline-start: 9.5px;
+                position: absolute;
+                opacity: 0;
+                transition: all 0.2s;
+            }
+            &.ant-radio-wrapper-checked {
+                position: relative;
+                :global {
+                    .remixicon-icon {
+                        opacity: 1;
+                        path {
+                            color: unset;
+                            fill: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

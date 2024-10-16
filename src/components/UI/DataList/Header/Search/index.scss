@@ -1,0 +1,24 @@
+.header-search {
+    width: calc(100% - 11.4rem);
+    max-width: 100%;
+}
+
+.search-container {
+    position: relative;
+    max-width: 100%;
+    & > span {
+        position: absolute;
+        inset-inline-start: 0;
+        top: -2.2rem;
+        opacity: 0;
+        transition: all .2s;
+        display: flex;
+        column-gap: .4rem;
+        * {
+            font-size: 1.2rem;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
