@@ -28,7 +28,6 @@ const Header = () => {
         searchActionName
     } = React.useContext(PageContext)
     const searchValue = useSelector((state: RootState) => state.ui?.[modelName]?.searchValue)
-    const { data: i18n } = useSelector((state: RootState) => state.localization.locals)
     const dispatch = useDispatch()
 
     const onResetSearch = () => {
@@ -80,7 +79,7 @@ const Header = () => {
                 <div className={styles['badges']}>
                     {searchValue?.trim() && (
                         <div className={styles['badge-item']}>
-                            <span className={styles['badge-item-title']}>{i18n?.General?.Keyword}:</span>
+                            <span className={styles['badge-item-title']}>Keyword:</span>
                             <span className={styles['badge-item-value']}>{searchValue?.trim()}</span>
                             <CloseFillIcon size={12} onClick={onResetSearch} />
                         </div>

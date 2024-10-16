@@ -6,7 +6,6 @@ import Button from '@UI/antd/Button/Button'
 import Popover from '@UI/antd/Popover/Popover'
 import PopoverContent from '@UI/PopoverContent'
 import { PageContext } from 'context'
-import useUser from '@hooks/processor/useUser'
 import { RootState } from '@store/store'
 import { rootActions } from '@store/slices'
 import styles from './index.scss'
@@ -15,10 +14,8 @@ const HideColumns = () => {
     const { modelName, columns } = React.useContext(PageContext)
     const dispatch = useDispatch()
     const hiddenColumns = useSelector((state: RootState) => state.ui?.[modelName]?.hiddenColumns)
-    const { data: i18n } = useSelector((state: RootState) => state.localization.locals)
     const hideableColumns = columns?.filter(item => item.allowHide)
     const [open, setOpen] = React.useState(false)
-    const { appDirection } = useUser()
 
     const handleClick = key => {
         const newHidedColumns = [...hiddenColumns]
@@ -34,7 +31,7 @@ const HideColumns = () => {
         <>
             {hideableColumns?.length > 0 && (
                 <Popover
-                    placement={appDirection === 'ltr' ? 'bottomLeft' : 'bottomRight'}
+                    placement= 'bottomRight'
                     open={open}
                     overlayClassName={styles['none']}
                     content={
@@ -60,7 +57,7 @@ const HideColumns = () => {
                         onClick={() => setOpen(prev => !prev)}
                         style={{ margin: 0 }}
                     >
-                        <LayoutColumnLineIcon size={18} /> <span>{i18n?.General?.Columns || 'Columns'}</span>
+                        <LayoutColumnLineIcon size={18} /> <span>Columns</span>
                     </Button>
                 </Popover>
             )}

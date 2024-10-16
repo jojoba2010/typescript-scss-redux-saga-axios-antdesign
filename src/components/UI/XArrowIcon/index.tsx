@@ -5,7 +5,6 @@ import ArrowLeftSFillIcon from 'remixicon-react/ArrowLeftSFillIcon'
 import ArrowRightSFillIcon from 'remixicon-react/ArrowRightSFillIcon'
 import ArrowLeftLineIcon from 'remixicon-react/ArrowLeftLineIcon'
 import ArrowRightLineIcon from 'remixicon-react/ArrowRightLineIcon'
-import useUser from '@hooks/processor/useUser'
 
 function XArrowIcon({
     onClick = () => undefined,
@@ -20,14 +19,13 @@ function XArrowIcon({
         className,
         onClick
     }
-    const { appDirection } = useUser()
     let icon: any = <ArrowLeftSLineIcon {...props} />
     if (fill) {
         icon = <ArrowLeftSFillIcon {...props} />
     } else if (!thin) {
         icon = <ArrowLeftLineIcon {...props} />
     }
-    if ((appDirection === 'ltr' && reverse) || (appDirection !== 'ltr' && !reverse)) {
+    if (!reverse) {
         if (fill) {
             icon = <ArrowRightSFillIcon {...props} />
         } else if (!thin) {

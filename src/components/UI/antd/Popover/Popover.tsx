@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react'
 import AntPopover, { PopoverProps as AntPopoverProps } from 'antd/es/popover/index'
 import classNames from 'classnames'
 import { getPlacementDirection } from '@features/General/handlers'
-import useUser from '@hooks/processor/useUser'
 import styles from './index.scss'
 
 export type PopoverProps = AntPopoverProps & {
@@ -11,10 +10,9 @@ export type PopoverProps = AntPopoverProps & {
 
 function Popover(props: PopoverProps): ReactElement {
     const { children, noPadding = false, placement = 'top', ...rest } = props
-    const { appDirection } = useUser()
     const tooltipPlacement = React.useMemo(
-        () => getPlacementDirection(placement, appDirection),
-        [placement, appDirection]
+        () => getPlacementDirection(placement, "rtl"),
+        [placement, "rtl"]
     )
     return (
         <AntPopover

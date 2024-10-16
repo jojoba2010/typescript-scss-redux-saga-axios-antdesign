@@ -8,7 +8,6 @@ import Spin from 'antd/lib/spin'
 import QueryString from 'qs'
 import { IButtons, ISearch } from '@features/General'
 import Header from './Header'
-import SideFilters from './SideFilters'
 import Table from './Table'
 import Grid from './Grid'
 import { IFilter } from './Header/Filters'
@@ -819,7 +818,6 @@ function DataList(props: IProps) {
                             ))}
                         <div className={styles.list}>
                             {sider && <div style={{ width: sider.width }}>{sider.component}</div>}
-                            {filter?.sideList?.length > 0 && !noData && <SideFilters />}
                             <div
                                 className={styles.data}
                                 style={{ width: sider && !isSmallDevice ? `calc(100% - ${sider?.width}px)` : '100%' }}
