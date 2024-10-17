@@ -1,27 +1,29 @@
 import React, { useEffect } from 'react'
-import {  useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@store/store'
-// import { rootActions } from '@app-store/slices'
+import { rootActions } from '@app-store/slices'
 // import { $inQuerySearch } from '@utils/helpers/queryHelpers'
-import Main from './main'
+import styles from './test.scss'
 const LabelTag = () => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const { data: tagList } = useSelector((state: RootState) => state.labelTag.list)
+console.log(process.env.NODE_ENV)
+// console.log(process.env.FIRST_ENV)
+// console.log(process.env.PUBLIC_URL)
 
     useEffect(() => {
-        Main()
-        // const data = {
-        //     startAt: 0,
-        //     maxResults: 10,
-        //     jql: 'creator=user1 ORDER BY created DESC'
-        // }
-        // dispatch(
-        //     rootActions.labelTag.list.onRequest({
-        //         data
-        //         //query: $inQuerySearch('type', ['Directory', 'Company', 'Generic', 'Contact'], false)
-        //     })
-        // )
-        //rootActions[modelName][actionName].onRequest
+        const data = {
+            startAt: 0,
+            maxResults: 10,
+            jql: 'creator=user1 ORDER BY created DESC'
+        }
+        dispatch(
+            rootActions.labelTag.list.onRequest({
+                data
+                //query: $inQuerySearch('type', ['Directory', 'Company', 'Generic', 'Contact'], false)
+            })
+        )
+        // rootActions[modelName][actionName].onRequest
         /*
               const data = {
                 name: 'name',
@@ -65,7 +67,7 @@ const LabelTag = () => {
         )*/
     }, [])
     return (
-        <div>
+        <div className={styles['myconfig']}>
             Hi
             <div>{tagList?.issues?.map(issue => <div key={issue.id}>{issue.fields.summary}</div>)}</div>
         </div>

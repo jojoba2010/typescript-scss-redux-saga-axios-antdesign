@@ -5,6 +5,7 @@ const { TypedCssModulesPlugin } = require('typed-css-modules-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const jsRules = require('./rules/jsRules');
 const fileRules = require('./rules/fileRules');
+const styleRules = require('./rules/styleRules');
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -13,32 +14,7 @@ module.exports = {
         filename: "bundle.[contenthash].js",
     },
     module: {
-        rules: [
-            ...jsRules,
-            ...fileRules,
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: {
-                                localIdentName: '[local]__[hash:base64:5]',
-                            },
-                        },
-                    },
-                    'sass-loader'
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            }
-        ]
+        rules: [...styleRules, ...jsRules, ...fileRules]
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],

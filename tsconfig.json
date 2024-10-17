@@ -29,5 +29,6 @@
         "resolveJsonModule": true,
         "lib": ["dom", "dom.iterable", "es5", "es2015.promise", "es6", "es7", "esnext"],
         "skipLibCheck": true,
+        "typeRoots": ["node", "node_modules/@types", "typings"]
     }
 }
